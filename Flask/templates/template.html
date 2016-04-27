@@ -1,16 +1,14 @@
 <html>
 <head>
-    {% block styles %}
-  {{super()}}
-    <link rel="stylesheet" href="{{url_for('.static', filename='bootstrap.css')}}">
-    <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
-  {% endblock %}
-  <title>{{ title }}</title>
+      <link rel="stylesheet" href="{{url_for('.static', filename='bootstrap.css')}}">
+      <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
 </head>
-    <body>
-      {% block content %}{% endblock %}
-    </body>
+<body>
+  {{ title }}
 
-    <div class="footer">
-    </div>
+  {{ navbar }}
+
+  {{ blockcontent }}
+</body>
+  <div class="footer"> {{ footer }}</div>
 </html>
