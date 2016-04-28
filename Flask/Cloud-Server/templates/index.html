@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+  </head>
+  <body>
+    <br>
+
+    <div class="container">
+      <div class="well">
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <img src="static/img/hobonet.png">
+          </div>
+          <div class="col-md-6 col-offset-2">
+            <form action="upload" method="post" enctype="multipart/form-data">
+              <input type="file" name="file" ><br><br>
+              <input type="submit" class"btn-lg" value="Upload">
+            </form>
+          </div>
+        </div>
+        <hr>
+
+
+
+        </div>
+
+
+          <ol class="breadcrumb">
+            <li>hackbox</li>
+            <li class="active"><a href="#">uploads</a></li>
+          </ol>
+          <center>
+          <div class="list-group">
+
+          {% for item in tree.children %}
+                <div class="col-sm-3">
+
+                  <div class="media">
+                    <a href="uploads/{{ item.name }}.{{item.extension }}" class="pull-right">
+
+                          <img class="media-object" src="{{item.thumb}}">
+                          <span class="badge badge-success pull-left"><small>{{ item.name }}.{{ item.extension }}</small></span>
+
+                    </a>
+                    </div>
+                </div>
+
+          {% endfor %}
+        </div>
+      </center>
+        </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Your Profile</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="style.css") }}">
+</head>
+<body><br><center>
+        <div class="container row">
+            <div class="col-xs-6">
+                <div class="well">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Wer?</th>
+                          <th>Was?</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for (n, p, q) in groceries %}
+                        <tr>
+                          <td>{{ n }}</td>
+                          <td>{{ p }} <span class="badge">{{ q }}</span></td>
+                        <tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+
+
+                </div>
+              </div>
+        <div class="col-xs-6">
+        <form method="get" action="/groceries/">
+          <form class="form-inline">
+            <div class="row">
+              <div class="form-group col-xs-3"></div>
+<div class="form-group col-xs-6">
+<label for="exampleInputName2">Wer ?</label>
+<input required type="text" class="form-control" id="exampleInputName2" name="person" placeholder="Icke">
+</div>
+<div class="form-group col-xs-3"></div>
+</div>
+<div class="row">
+<div class="form-group col-xs-3"></div>
+<div class="form-group col-xs-6">
+<label for="exampleInputEmail2">Was ?</label>
+<input required type="text" class="form-control" id="exampleInputEmail2" name="produkt" placeholder="Gurken">
+</div>
+<div class="form-group col-xs-3"></div>
+</div>
+<div class="row">
+<div class="form-group col-xs-4"></div>
+<div class="form-group col-xs-4">
+<label for="exampleInputName2">Quantität</label>
+<input required type="number" class="form-control" id="exampleNum" name="quantitaet" placeholder="1"></input><br>
+<div class="form-group col-xs-4"></div>
+</div>
+</div>
+<div class="form-group col-xs-4"></div>
+<div class="form-group col-xs-4">
+<button type="submit" class="btn-md btn-primary form-control" method="get">Bitte mitbringen!</button>
+</div>
+<div class="form-group col-xs-4"></div>
+
+</form>
+        </form></div>          </div>
+      </center>
+      <body>
+</html>
